@@ -1,16 +1,17 @@
 body.dark-mode {
   --button-disabled-background: rgba(63, 67, 74, .2);
   --button-secondary-background: var(--rcx-button-colors-secondary-background-color);
-  --color-darker:#272c33;
+  --color-darker: #272c33;
   --component-color: var(--rc-color-primary-dark);
   --content-background-color: var(--color-darkest);
   --flex-nav-background: var(--color-dark);
   --header-background-color: var(--color-darkest);
-  --info-font-color:var(--color-gray-light); /* #a0a0a0; */
+  --info-font-color: var(--color-gray-light); /* #a0a0a0; */
   --input-icon-color: var(--color-white);
   --input-text-color: var(--color-gray-lightest);
-  --message-box-background:rgba(255,255,255,0.1);
+  --message-box-background: rgba(255,255,255,0.1);
   --message-box-editing-color: var(--color-dark-medium);
+  --message-box-markdown-hover-color: var(--color-gray-light);
   --message-box-user-typing-color: var(--color-gray-lightest);
   --message-box-user-typing-user-color: var(--color-gray-lightest);
   --popover-item-color: var(--color-white);
@@ -43,6 +44,7 @@ body.dark-mode {
   --rcx-input-colors-disabled-background-color: var(--color-dark-medium);
   --rcx-input-colors-disabled-color: var(--color-gray);
   --rcx-tag-colors-disabled-background-color: var(--rc-color-primary-dark);
+  --rcx-tooltip-text-color: var(--color-white);
   --secondary-background-color: var(--color-dark);
   --sidebar-background-light-active: #4a525c;
   --sidebar-background-light-hover: #414952;
@@ -50,12 +52,12 @@ body.dark-mode {
 
 @-webkit-keyframes highlight {
   from {
-     background-color:#1e74f6
+     background-color: #1e74f6
   }
 }
 @keyframes highlight {
   from {
-     background-color:#1e74f6
+     background-color: #1e74f6
   }
 }
 
@@ -64,21 +66,26 @@ body.dark-mode .content-background-color {
 }
 
 body.dark-mode .background-component-color {
-  background-color:var(--color-dark-blue);
+  background-color: var(--color-dark-blue);
 }
+
+body.dark-mode .color-primary-action-color {
+  color: var(--color-white);
+}
+
 body.dark-mode .message.active, .message:hover {
   background-color: var(--color-darker);
 }
 
 body.dark-mode .message-actions {
-  color: var(--primary-font-color);
   background-color: var(--content-background-color);
   border-color: var(--color-dark);
+  color: var(--primary-font-color);
 }
 
 body.dark-mode .rcx-tag--secondary {
-  color: var(--primary-font-color);
   background-color: var(--color-dark);
+  color: var(--primary-font-color);
 }
 
 body.dark-mode .message-actions__button:hover, body.dark-mode .message-actions__menu:hover {
@@ -86,13 +93,21 @@ body.dark-mode .message-actions__button:hover, body.dark-mode .message-actions__
 }
 
 body.dark-mode .rc-popover__content {
-  color: var(--primary-font-color);
   background-color: var(--color-dark);
   box-shadow: 0 0 2px var(--color-dark-20);
+  color: var(--primary-font-color);
 }
 
 body.dark-mode .rc-header--room {
   border-bottom-color: var(--color-dark-medium);
+}
+
+body.dark-mode .rc-member-list__counter {
+ color: var(--primary-font-color);
+}
+
+body.dark-mode .rc-member-list__user.active, .rc-member-list__user:hover {
+ background-color: var(--color-darker);
 }
 
 body.dark-mode .rc-message-box__container {
@@ -120,6 +135,10 @@ body.dark-mode .message.new-day::after {
 
 body.dark-mode .rc-old .rc-message-box .reply-preview {
   background-color: var(--color-darker);
+}
+
+body.dark-mode select {
+  background-color: var(--color-dark);
 }
 
 body.dark-mode .rc-modal {
@@ -183,7 +202,7 @@ body.dark-mode .rc-button {
 
 /* Admin */
 body.dark-mode .admin-table-row {
-   background-color:#363d4a;
+   background-color: #363d4a;
 }
 
 body.dark-mode .sidebar-light .sidebar-item {
@@ -206,13 +225,12 @@ body.dark-mode .rcx-table__cell--align-start, body.dark-mode .rcx-table__cell--a
   background-color: var(--color-dark-medium) !important;
 }
 
-body.dark-mode .rcx-\@9jfjls,
+body.dark-mode .rcx-\@9jfjl,
 body.dark-mode .rcx-\@16ef2pm,
 body.dark-mode .rcx-\@1l3asra,
 body.dark-mode .rcx-\@1wm5na {
   color: var(--info-font-color) !important; /* --rcx-color-neutral-800 */
 }
-
 
 body.dark-mode .rcx-\@1oytvro {
   background-color: var(--color-dark);
@@ -225,7 +243,6 @@ body.dark-mode .rcx-\@dlop43 {
 body.dark-mode .rcx-\@wi5ocu {
   color: var(--primary-font-color) !important;
 }
-
 
 body.dark-mode .rcx-\@1usu1xd:hover {
   background-color: var(--color-dark);
@@ -249,37 +266,45 @@ body.dark-mode .hljs-keyword {
 
 body.dark-mode .hljs-selector-id,
 body.dark-mode .hljs-keyword {
-  color:var(--color-light-blue);
+  color: var(--color-light-blue);
 }
+
 body.dark-mode .hljs-title {
-  color:var(--color-gray-light);
+  color: var(--color-gray-light);
 }
+
 body.dark-mode .hljs-literal,
 body.dark-mode .hljs-number,
 body.dark-mode .hljs-attr,
 body.dark-mode .hljs-template-variable,
 body.dark-mode .hljs-variable {
-  color:var(--color-dark-green);
+  color: var(--color-dark-green);
 }
+
 body.dark-mode .hljs-tag,
 body.dark-mode .hljs-name {
-  color:var(--color-light-blue);
+  color: var(--color-light-blue);
 }
+
 body.dark-mode .hljs-selector-tag {
-  color:var(--color-green);
+  color: var(--color-green);
 }
+
 body.dark-mode .hljs-doctag,
 body.dark-mode .hljs-string {
-  color:var(--color-red);
+  color: var(--color-red);
 }
+
 body.dark-mode .hljs-attribute,
 body.dark-mode .hljs-type,
 body.dark-mode .hljs-number {
-  color:var(--color-orange);
+  color: var(--color-orange);
 }
+
 body.dark-mode .hljs-addition {
-  background-color:#1e3a21;
+  background-color: #1e3a21;
 }
+
 body.dark-mode .hljs-deletion {
-  background-color:#472d2e;
+  background-color: #472d2e;
 }
